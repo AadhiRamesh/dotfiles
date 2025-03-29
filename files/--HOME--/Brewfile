@@ -31,6 +31,7 @@ puts "Only performing base installation!" if is_base_install
 at_exit { system('post-brew-install.sh') }
 
 tap 'romkatv/powerlevel10k'
+tap 'homebrew/services'
 
 # formulae pulled in from homebrew to replace system equivalents to fix any security issues since the OS was released
 brew 'bash'
@@ -59,45 +60,49 @@ cask 'keybase', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 
 return true if is_base_install
 
 # formulae pulled in for advanced configs (these are optional, but still recommended)
+brew 'awscli'
 brew 'bat'
 brew 'btop'
-brew 'git-gui'
+brew 'docker-credential-helper'
 brew 'jq'
+brew 'k6'
 brew 'moreutils'
 brew 'ncdu'
 brew 'prettyping'
 brew 'ripgrep'
 brew 'syncthing'
-brew 'tldr'
+brew 'talisman'
+brew 'terraform'
+brew 'tig'
+brew 'yarn'
 
 # cask 'batteryboi'
 # cask 'battery-toolkit' #, postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Battery Toolkit'"
 cask 'aldente', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'AlDente'"
 cask 'appcleaner'
 cask 'brave-browser'
+cask 'bruno'
+cask 'dbeaver-community'
 cask 'clocker', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Clocker'"
 cask 'fliqlo'
 cask 'firefox@nightly' #, greedy: true
+cask 'git-credential-manager'
+cask 'insomnia'
+cask 'intellij-idea-ce'
 cask 'jordanbaird-ice', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Ice'"
 cask 'keepassxc@beta'
 cask 'keepingyouawake', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'KeepingYouAwake'"
 cask 'keycastr'
 cask 'keyclu' if is_arm
 # cask 'monolingual'
+cask 'mockoon'
 cask 'notunes'
 cask 'ollama', restart_service: :changed
-cask 'onlyoffice'
-cask 'onyx'
-cask 'protonvpn'
 cask 'rancher'
 cask 'raycast', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Raycast'"
 # cask 'silicon' if is_arm
-cask 'stats', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Stats'"
-cask 'the-unarchiver'
-# cask 'thunderbird@daily'
-cask 'utm'
-cask 'vscodium@insiders'   # TODO: Doesn't handle 'Remote Containers' and GH-based auto-syncing when compared to VSCode
-cask 'zen-browser@twilight'
+cask 'stats', postinstall: "type setup_login_item &> /dev/null 2>&1 || source \"${HOME}/.aliases\"; setup_login_item 'Stats'"
+cask 'visual-studio-code'
 cask 'zoom'
 
 brew 'mas'
@@ -121,11 +126,13 @@ if is_vscode_installed
   vscode 'codezombiech.gitignore'
   vscode 'davidanson.vscode-markdownlint'
   vscode 'dbaeumer.vscode-eslint'
+  vscode 'dbaeumer.vscode-eslint'
   vscode 'digitalbrainstem.javascript-ejs-support'
   vscode 'drcika.apc-extension'
   vscode 'eamodio.gitlens'
   vscode 'editorconfig.editorconfig'
   vscode 'esbenp.prettier-vscode'
+  vscode 'gabrielnordeborn.vscode-graphiql-explorer'
   vscode 'genuitecllc.codetogether'
   vscode 'Google.geminicodeassist'
   vscode 'ibm.output-colorizer'
@@ -133,18 +140,17 @@ if is_vscode_installed
   vscode 'mikestead.dotenv'
   vscode 'mkhl.direnv'
   vscode 'ms-azuretools.vscode-docker'
+  vscode 'ms-dotnettools.csdevkit'
+  vscode 'ms-dotnettools.csharp'
+  vscode 'ms-dotnettools.vscode-dotnet-runtime'
+  vscode 'ms-dotnettools.vscodeintellicode-csharp'
+  vscode 'ms-playwright.playwright'
   vscode 'ms-vscode.vscode-typescript-next'
   vscode 'oderwat.indent-rainbow'
+  vscode 'oracle.oracle-java'
   vscode 'orta.vscode-jest'
-  vscode 'redhat.vscode-yaml'
-  vscode 'richie5um2.vscode-sort-json'
-  vscode 'shan.code-settings-sync'
-  vscode 'shopify.ruby-lsp'
   vscode 'tchayen.markdown-links'
   vscode 'tyriar.sort-lines'
-  vscode 'vscode-icons-team.vscode-icons'
-  vscode 'wayou.vscode-todo-highlight'
-  vscode 'wholroyd.jinja'
   vscode 'wmaurer.change-case'
   vscode 'yzhang.markdown-all-in-one'
 end
