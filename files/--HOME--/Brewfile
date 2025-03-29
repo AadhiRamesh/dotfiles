@@ -59,30 +59,35 @@ cask 'keybase', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 
 return 0 if is_base_install
 
 # formulae pulled in for advanced configs (these are optional, but still recommended)
+brew 'awscli'
 brew 'bat'
 brew 'btop'
-brew 'dua-cli'
-brew 'git-gui'
+brew 'docker-credential-helper'
 brew 'jq'
+brew 'k6'
 brew 'moreutils'
 brew 'ncdu'
 brew 'pandoc'
 brew 'prettyping'
 brew 'ripgrep'
 brew 'syncthing'
-brew 'tlrc'
+brew 'talisman'
+brew 'terraform'
+brew 'tig'
 
 cask 'aldente', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'AlDente'"
 cask 'boring-notch', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'boringNotch'" if ::OS::Mac::version >= 14
 cask 'brave-browser'
+cask 'bruno'
 cask 'clocker', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Clocker'"
+cask 'dbeaver-community'
 cask 'firefox@nightly' #, greedy: true
-cask 'google-chrome@beta'
-cask 'grayjay'
-cask 'jordanbaird-ice@beta', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Ice'" if ::OS::Mac::version >= 14
-cask 'keepassxc@beta'
+cask 'git-credential-manager'
+cask 'github'
+cask 'intellij-idea-ce'
 cask 'keycastr'
 cask 'keyclu' if is_arm
+cask 'mockoon'
 cask 'ollama-app', restart_service: :changed
 cask 'onlyoffice'
 cask 'onyx' # if !is_beta_os && ::OS::Mac::version < 26
@@ -91,9 +96,9 @@ cask 'protonvpn'
 cask 'rancher'
 cask 'raycast', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Raycast'"
 cask 'stats', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Stats'"
-cask 'tor-browser@alpha'
-cask 'vscodium@insiders'   # TODO: Doesn't handle 'Remote Containers' and GH-based auto-syncing when compared to VSCode
-cask 'zen@twilight'
+cask 'sublime-text'
+cask 'the-unarchiver'
+cask 'visual-studio-code'
 cask 'zoom'
 
 # brew 'mas'
@@ -123,6 +128,7 @@ if is_vscode_installed
   vscode 'drcika.apc-extension'
   vscode 'editorconfig.editorconfig'
   vscode 'esbenp.prettier-vscode'
+  vscode 'gabrielnordeborn.vscode-graphiql-explorer'
   vscode 'genuitecllc.codetogether'
   vscode 'google.geminicodeassist'
   vscode 'ibm.output-colorizer'
@@ -131,15 +137,15 @@ if is_vscode_installed
   vscode 'mkhl.direnv'
   vscode 'ms-azuretools.vscode-containers'
   vscode 'ms-azuretools.vscode-docker'
-  vscode 'ms-vscode.atom-keybindings'
-  vscode 'ms-vscode.copilot-mermaid-diagram'
+  vscode 'ms-dotnettools.csdevkit'
+  vscode 'ms-dotnettools.csharp'
+  vscode 'ms-dotnettools.vscode-dotnet-runtime'
+  vscode 'ms-dotnettools.vscodeintellicode-csharp'
+  vscode 'ms-playwright.playwright'
   vscode 'ms-vscode.vscode-typescript-next'
   vscode 'oderwat.indent-rainbow'
+  vscode 'oracle.oracle-java'
   vscode 'orta.vscode-jest'
-  vscode 'redhat.vscode-yaml'
-  vscode 'richie5um2.vscode-sort-json'
-  vscode 'shan.code-settings-sync'
-  vscode 'shopify.ruby-lsp'
   vscode 'tchayen.markdown-links'
   vscode 'tyriar.sort-lines'
   vscode 'vscode-icons-team.vscode-icons'
