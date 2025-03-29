@@ -59,25 +59,32 @@ cask 'keybase', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 
 return 0 if is_base_install
 
 # formulae pulled in for advanced configs (these are optional, but still recommended)
+brew 'awscli'
 brew 'bat'
 brew 'btop'
-brew 'git-gui'
+brew 'docker-credential-helper'
 brew 'jq'
+brew 'k6'
 brew 'moreutils'
 brew 'ncdu'
 brew 'prettyping'
 brew 'ripgrep'
 brew 'syncthing'
-brew 'tldr'
+brew 'talisman'
+brew 'terraform'
+brew 'tig'
 
 cask 'aldente', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'AlDente'"
 cask 'brave-browser'
+cask 'bruno'
+cask 'dbeaver-community'
 cask 'clocker', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Clocker'"
 cask 'firefox@nightly' #, greedy: true
-cask 'fliqlo'
-cask 'jordanbaird-ice', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Ice'" if OS::Mac::version >= 14
-cask 'keepassxc@beta'
+cask 'git-credential-manager'
+cask 'github'
+cask 'intellij-idea-ce'
 cask 'keycastr'
+cask 'mockoon'
 cask 'keyclu' if is_arm
 cask 'ollama-app', restart_service: :changed
 cask 'onlyoffice'
@@ -88,9 +95,9 @@ cask 'protonvpn'
 cask 'rancher'
 cask 'raycast', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Raycast'"
 cask 'stats', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Stats'"
+cask 'sublime-text'
 cask 'the-unarchiver'
-cask 'vscodium@insiders'   # TODO: Doesn't handle 'Remote Containers' and GH-based auto-syncing when compared to VSCode
-cask 'zen@twilight'
+cask 'visual-studio-code'
 cask 'zoom'
 
 brew 'mas'
@@ -120,6 +127,7 @@ if is_vscode_installed
   vscode 'drcika.apc-extension'
   vscode 'editorconfig.editorconfig'
   vscode 'esbenp.prettier-vscode'
+  vscode 'gabrielnordeborn.vscode-graphiql-explorer'
   vscode 'genuitecllc.codetogether'
   vscode 'google.geminicodeassist'
   vscode 'ibm.output-colorizer'
@@ -128,14 +136,15 @@ if is_vscode_installed
   vscode 'mkhl.direnv'
   vscode 'ms-azuretools.vscode-containers'
   vscode 'ms-azuretools.vscode-docker'
-  vscode 'ms-vscode.atom-keybindings'
+  vscode 'ms-dotnettools.csdevkit'
+  vscode 'ms-dotnettools.csharp'
+  vscode 'ms-dotnettools.vscode-dotnet-runtime'
+  vscode 'ms-dotnettools.vscodeintellicode-csharp'
+  vscode 'ms-playwright.playwright'
   vscode 'ms-vscode.vscode-typescript-next'
   vscode 'oderwat.indent-rainbow'
+  vscode 'oracle.oracle-java'
   vscode 'orta.vscode-jest'
-  vscode 'redhat.vscode-yaml'
-  vscode 'richie5um2.vscode-sort-json'
-  vscode 'shan.code-settings-sync'
-  vscode 'shopify.ruby-lsp'
   vscode 'tchayen.markdown-links'
   vscode 'tyriar.sort-lines'
   vscode 'vscode-icons-team.vscode-icons'
