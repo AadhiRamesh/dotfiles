@@ -263,6 +263,7 @@ com.google.Chrome.canary
 com.googlecode.iterm2
 com.googlecode.iterm2.private
 com.googlecode.munki.ManagedSoftwareCenter
+com.jetbrains.intellij.ce
 com.jordanbaird.Ice
 com.lowtechguys.ZoomHider
 com.macpaw.site.theunarchiver
@@ -273,19 +274,24 @@ com.microsoft.shared
 com.microsoft.teams2.helper
 com.microsoft.VSCodeInsiders
 com.mitchellh.ghostty
+com.mockoon.app
 com.objective-see.KnockKnock
 com.ovatar.batteryapp
 com.parallels.Parallels Desktop
 com.pdfeditor.pdfeditormac
 com.qtproject
 com.raycast.macos
+com.sublimetext.4
 com.titanium.OnyX
 com.titanium.OnyX.update
+com.tombonez.notunes
+com.usebruno.app
 com.utmapp.UTM
 com.visualstudio.code.oss
 com.vscodium.VSCodiumInsiders
 eu.exelban.Stats
 familycircled
+io.dbeaver.DBeaverCommunity
 io.github.keycastr
 io.rancherdesktop.app
 keybase.Electron
